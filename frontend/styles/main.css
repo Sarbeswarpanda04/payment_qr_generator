@@ -1,0 +1,399 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background: linear-gradient(135deg, #002b98, #008da3);
+    color: hsl(0, 0%, 0%);
+    margin: 0;
+    padding: 0;
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background: linear-gradient(135deg, #181c24, #23283a);
+    color: #f4f6fb;
+}
+
+/* Container */
+.container {
+    max-width: 550px;
+    margin: 32px auto;
+    padding: 16px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+}
+
+/* Heading */
+h1 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin: 0;
+    color: #ffffff;
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+/* Card */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: 0 2px 16px rgba(60, 60, 60, 0.08);
+    padding: 24px 20px;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Dark Mode Card */
+body.dark-mode .card {
+    background: #23283a;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+}
+
+/* Form Group */
+.form-group {
+    margin-bottom: 18px;
+}
+
+/* Labels */
+label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 6px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+    width: 97%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 7px;
+    background: #f9fafb;
+    transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #5b9df9;
+    outline: none;
+}
+
+/* Dark Mode Inputs */
+body.dark-mode input[type="text"],
+body.dark-mode input[type="number"] {
+    background: #23283a;
+    color: #f4f6fb;
+    border: 1px solid #44495a;
+}
+
+/* Buttons */
+.btn {
+    background: #5b9df9;
+    color: #fff;
+    border: none;
+    border-radius: 7px;
+    padding: 10px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(91, 157, 249, 0.08);
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    background: #357ae8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(53, 122, 232, 0.2);
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+/* QR Section */
+#qr-section {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+/* QR Code */
+#qr-code {
+    margin: 18px auto 12px;
+    width: 180px;
+    height: 180px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.08);
+    transition: background 0.3s ease;
+}
+
+/* Dark Mode QR Code */
+body.dark-mode #qr-code {
+    background: #181c24;
+}
+
+/* UPI Link Group */
+.upi-link-group {
+    display: flex;
+    margin: 10px 0 16px;
+}
+
+#upi-link {
+    flex: 1;
+    padding: 8px 10px;
+    font-size: 0.98rem;
+    border: 1px solid #d1d5db;
+    background: #f9fafb;
+    border-radius: 7px 0 0 7px;
+    border-right: none;
+}
+
+body.dark-mode #upi-link {
+    background: #23283a;
+    color: #f4f6fb;
+    border: 1px solid #44495a;
+    border-right: none;
+}
+
+#copy-link-btn {
+    padding: 0 16px;
+    background: #e9eefc;
+    color: #357ae8;
+    font-weight: 600;
+    border: 1px solid #d1d5db;
+    border-left: none;
+    border-radius: 0 7px 7px 0;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+#copy-link-btn:hover {
+    background: #d6e4fa;
+}
+
+body.dark-mode #copy-link-btn {
+    background: #23283a;
+    color: #5b9df9;
+    border: 1px solid #44495a;
+    border-left: none;
+}
+
+/* History Header */
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Clear History Button */
+#clear-history-btn {
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #e74c3c;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#clear-history-btn:hover {
+    color: #c0392b;
+}
+
+/* History List */
+#history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* History List Items */
+#history-list li {
+    background: #f9fafb;
+    margin-bottom: 10px;
+    padding: 12px 10px;
+    border-radius: 7px;
+    font-size: 0.97rem;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 1px 4px rgba(60, 60, 60, 0.04);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+#history-list li:hover {
+    background: #e9eefc;
+    box-shadow: 0 2px 8px rgba(60, 60, 60, 0.1);
+}
+
+body.dark-mode #history-list li {
+    background: #23283a;
+}
+
+body.dark-mode #history-list li:hover {
+    background: #2a2f3e;
+}
+
+/* History Actions */
+.history-actions {
+    margin-top: 4px;
+    display: flex;
+    gap: 10px;
+}
+
+.history-copy,
+.history-download {
+    background: none;
+    border: none;
+    color: #5b9df9;
+    cursor: pointer;
+    font-size: 0.98rem;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.history-copy:hover,
+.history-download:hover {
+    color: #357ae8;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        padding: 8px;
+    }
+
+    .card {
+        padding: 16px 10px;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+
+    #qr-code {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .container {
+        max-width: 98vw;
+        padding: 8px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin-bottom: 8px;
+    }
+
+    #theme-toggle {
+        align-self: flex-end;
+    }
+
+    .card {
+        padding: 16px 10px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: 95%;
+        padding: 8px 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    #qr-code {
+        width: 140px;
+        height: 140px;
+    }
+
+    .upi-link-group {
+        flex-direction: column;
+    }
+
+    #upi-link {
+        border-radius: 7px;
+        margin-bottom: 8px;
+    }
+
+    #copy-link-btn {
+        border-radius: 7px;
+    }
+
+    #history-list li {
+        padding: 10px 8px;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}

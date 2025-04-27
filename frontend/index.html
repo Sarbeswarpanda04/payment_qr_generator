@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic UPI Payment QR Code Generator</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+    <!-- Animate.css (optional for smooth animations) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/main.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>UPI Payment QR Code Generator</h1>
+            <button id="theme-toggle" title="Toggle dark/light mode">🌙</button>
+        </header>
+        <main>
+            <section class="card input-card animate__animated animate__fadeIn">
+                <form id="upi-form" autocomplete="off">
+                    <div class="form-group">
+                        <label for="upi-id">UPI ID <span>*</span></label>
+                        <input type="text" id="upi-id" name="upi-id" placeholder="e.g. username@bank" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="payee-name">Payee Name <span>*</span></label>
+                        <input type="text" id="payee-name" name="payee-name" placeholder="e.g. Sarbeswar Panda" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount (INR) <span>*</span></label>
+                        <input type="number" id="amount" name="amount" min="1" step="0.01" placeholder="e.g. 100" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="note">Transaction Note</label>
+                        <input type="text" id="note" name="note" maxlength="40" placeholder="e.g. Lunch payment">
+                    </div>
+                    <button type="submit" id="generate-btn" class="btn">Generate QR Code</button>
+                </form>
+            </section>
+
+            <section id="qr-section" class="card qr-card animate__animated" style="display:none;">
+                <h2>Scan & Pay</h2>
+                <div id="qr-code"></div>
+                <div class="upi-link-group">
+                    <input type="text" id="upi-link" readonly>
+                    <button id="copy-link-btn" title="Copy UPI link">Copy</button>
+                </div>
+                <button id="download-btn" class="btn">Download QR as PNG</button>
+            </section>
+
+            <section class="card history-card animate__animated animate__fadeIn">
+                <div class="history-header">
+                    <h2>QR Generation History</h2>
+                    <button id="clear-history-btn" title="Clear history">🗑️</button>
+                </div>
+                <ul id="history-list"></ul>
+            </section>
+        </main>
+        <footer>
+            <p>Made with ❤️ by Sarbeswar Panda</p>
+        </footer>
+    </div>
+    <!-- QRCode.js library -->
+    <script src="libs/qrcode.min.js"></script>
+    <!-- Main JS -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>
